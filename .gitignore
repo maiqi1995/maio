@@ -1,0 +1,9 @@
+# 排除所有内容
+*
+# 强行保留核心文件
+!config.yaml
+!.railwayignore
+!main.go
+!go.mod
+!go.sum
+!.gitignore
