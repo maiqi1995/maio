@@ -1,0 +1,10 @@
+[build]
+dockerfile = "Dockerfile"
+
+[deploy]
+restartPolicy = "on-failure"
+
+[env]
+LITELLM_MODE = "PROXY"
+PORT = "4000"
+SKIP_DATABASE_MIGRATION = "true"
