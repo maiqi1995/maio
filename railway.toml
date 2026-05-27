@@ -1,0 +1,8 @@
+[build]
+command = "echo 'No build step needed for LiteLLM proxy'"
+
+[deploy]
+startCommand = "--config /app/config.yaml --port 4000"
+
+[env]
+# DATABASE_URL will be set in Railway environment variables
