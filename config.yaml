@@ -1,8 +1,8 @@
 model_list:
-  - model_name: glm-4.5-air
+  - model_name: gpt-4o
     litellm_params:
       model: zhipu/glm-4.5-air
-      api_key: "dbe9a1b9d0784040bd8a5924eb68cb12.36ZNOI6XSZ6YW3oz"
+      api_key: ""  # Leave empty for user to fill in
 
 general_settings:
   master_key: "9SMwnbAdv27hdXGp76QzK97k6Kxth5pWHNqPzuOeTWEX9laP"
