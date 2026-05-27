@@ -1,9 +1,0 @@
-[build]
-dockerfile = true
-
-[deploy]
-startCommand = ""
-
-[env]
-LITELLM_MODE = "PROXY"
-SKIP_DATABASE_MIGRATION = "true"
