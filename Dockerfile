@@ -1,14 +1,11 @@
-# 使用官方镜像，确保网络拉取顺利
-FROM berriai/litellm:main-latest
+# 注意：LiteLLM 的最新公开规范源应该使用 ghcr.io/berriai/litellm:main-latest
+FROM ghcr.io/berriai/litellm:main-latest
 
-# 设置工作目录
-WORKDIR /app
-
-# 将配置文件放入指定位置
+# 将本地同目录下的 config.yaml 复制到容器的 /app 目录下
 COPY config.yaml /app/config.yaml
 
-# 暴露端口
+# 暴露 4000 端口
 EXPOSE 4000
 
-# 启动 LiteLLM 代理
-CMD ["--config", "/app/config.yaml", "--port", "4000"]
+# 启动命令：指定读取刚刚 COPY 进去的配置文件
+CMD ["--config", "/app/config.yaml", "--port", "4000", "--host", "0.0.0.0"]
