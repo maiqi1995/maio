@@ -1,8 +1,26 @@
 model_list:
-  - model_name: gpt-4o
+  - model_name: glm-4.5-air
     litellm_params:
       model: zhipu/glm-4.5-air
-      api_key: ""  # Leave empty for user to fill in
+      # 使用列表形式配置多个 Key，实现轮询和故障转移
+      api_key:
+        - "dbe9a1b9d0784040bd8a5924eb68cb12.36ZNOI6XSZ6YW3oz"
+        - "2110948e330f498c96e64cf1b6c58e38.194kWSsMCfYNb0ng"
+        - "efda5ca14309468c8f7ef6487899ec7d.sOBJhYbsn4U621h4"
+        - "dbe9a1b9d0784040bd8a5924eb68cb12.36ZNOI6XSZ6YW3oz"
+        - "f21f7c0f7d704827a94a14524b9245cd.oaDaEM6ihCNRGZOB"
+        - "9fe79712f91f4efab7f4c5206664fe97.njAWp8buvFCw6ESe"
+        - "7f8116e8f9d64e009b2ad3255abe4fd2.ejTA2k9lK3jNDLPg"
+    model_info:
+      # 开启负载均衡模式
+      mode: "loadbalance"
+      
+- model_name: glm-4.6v
+    litellm_params:
+      model: zhipu/glm-4.6v
+      api_key: *zhipu_keys # 直接引用上面的 key 列表，无需重复书写
+    model_info:
+      mode: "loadbalance"
 
 general_settings:
   master_key: "9SMwnbAdv27hdXGp76QzK97k6Kxth5pWHNqPzuOeTWEX9laP"
